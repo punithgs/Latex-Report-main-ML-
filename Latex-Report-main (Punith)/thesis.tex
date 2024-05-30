@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper]{report}
+
+% Preamble packages
+\usepackage{newtxtext,newtxmath} % Use newtxtext and newtxmath instead of mathptmx and amssymb
+\usepackage{setspace}
+\usepackage{mdframed}
+\usepackage{acronym}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{tikz}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    citecolor=black,
+    urlcolor=black,
+}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage[left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{lineno}
+\usepackage{comment}
+\usepackage{natbib}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage[toc,page]{appendix}
+\usepackage{ragged2e}
+\usepackage{anyfontsize}
+\usepackage{caption}
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\fontsize{12}{16}\selectfont\bfseries}
+  {\thesection}
+  {1em}
+  {}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{12}{16}\selectfont\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\raggedleft}
+  {\small\itshape\chaptertitlename\ \thechapter}
+  {0pt}{\MakeUppercase}{\large}
+  {\Large}
+\titlespacing*{\chapter}{0pt}{-20pt}{40pt}
+
+% Global definitions
+\def\mytitle{TITLE:-SIGN  LANGUAGE  DETECTION  SYSTEM}
+\def\branch{INFORMATION SCIENCE AND ENGINEERING}
+\def\mydep{DEPARTMENT OF INFORMATION SCIENCE AND ENGINEERING}
+\def\myyear{May, 2024}
+
+% Set line spacing to 1.6
+\setstretch{1.6}
+
+\begin{document}
+
+\baselineskip=18pt plus1pt
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\pagenumbering{roman}
+
+% Temporarily disable parskip for front matter
+\newlength{\savedparskip}
+\setlength{\savedparskip}{\parskip}
+\setlength{\parskip}{0pt}
+
+% Front matter
+\include{./front_matter/title_page}
+
+\clearpage
+\addcontentsline{toc}{chapter}{ABSTRACT}
+\include{./front_matter/abstract}
+
+\addcontentsline{toc}{chapter}{CONTENTS}
+\tableofcontents
+
+\listoffigures
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+
+
+% Main content
+\fontsize{12}{15}\selectfont
+
+% Restore parskip for main content
+\setlength{\parskip}{\savedparskip}
+
+% Main material
+\clearpage
+\pagenumbering{arabic}
+\justifying
+\include{./chapters/introduction}
+\include{./chapters/literature_review}
+\include{./chapters/theoretical_work}
+\include{./chapters/methodology}
+\include{./chapters/software_hardware}
+\include{./chapters/implementation}
+\include{./chapters/result&discussion}
+\include{./chapters/conclusion}
+\include{./chapters/references}
+
+
+
+\end{document}
